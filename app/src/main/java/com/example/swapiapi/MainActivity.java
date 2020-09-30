@@ -1,14 +1,12 @@
 package com.example.swapiapi;
 
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
-import com.example.swapiapi.models.Planet;
+import com.example.swapiapi.adapters.MyAdapter;
 import com.example.swapiapi.models.PlanetList;
 import com.example.swapiapi.network.NetworkService;
 
@@ -16,20 +14,27 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class MainActivity extends AppCompatActivity {
 
-    private LinearLayout.LayoutParams gravityCenter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-    private LinearLayout linearLayout;
+    private RecyclerView recyclerView;
+    private MyAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        linearLayout = (LinearLayout) findViewById(R.id.layoutMain);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
         NetworkService.getInstance().getSwapApi().getListPlanets().enqueue(new Callback<PlanetList>() {
             @Override
             public void onResponse(Call<PlanetList> call, Response<PlanetList> response) {
-                initializeTextViewers(response.body());
+                adapter = new MyAdapter(response.body());
+                Log.d("resps", response.body().toString());
+                recyclerView.setAdapter(adapter);
             }
 
             @Override
@@ -37,18 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 t.printStackTrace();
             }
         });
-
-    }
-
-
-    public void initializeTextViewers(PlanetList planetList) {
-        for(Planet planet: planetList.getResults()){
-            TextView textView = new TextView(getApplicationContext());
-            textView.setText(planet.getName());
-            textView.setTextSize(30);
-            gravityCenter.gravity = Gravity.CENTER;
-            linearLayout.addView(textView, gravityCenter);
-        }
     }
 
 }

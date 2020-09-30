@@ -18,4 +18,17 @@ public class PlanetList {
     public void setResults(List<Planet> results) {
         this.results = results;
     }
+
+    public void clear() {
+        results = null;
+    }
+
+    public int size() {
+        if(results != null)  return results.size();
+        return 0;
+    }
+
+    public Planet get(int position) {
+        return results.get(position);
+    }
 }
