@@ -29,14 +29,13 @@ public class PlanetActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        // Set up progress before call
         final ProgressDialog progressDoalog;
         progressDoalog = new ProgressDialog(PlanetActivity.this);
         progressDoalog.setMax(100);
         progressDoalog.setMessage("Its loading....");
         progressDoalog.setTitle("ProgressDialog bar example");
-        progressDoalog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        // show it
+        progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+
         progressDoalog.show();
 
         NetworkService.getInstance().getSwapApi().getListPlanets().enqueue(new Callback<PlanetList>() {
