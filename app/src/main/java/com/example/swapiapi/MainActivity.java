@@ -1,5 +1,6 @@
 package com.example.swapiapi;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,24 +20,27 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private MyAdapter adapter;
-
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initializeProgressDialog();
         initializeRecyclerView();
+
 
         NetworkService.getInstance().getSwapApi().getListPlanets().enqueue(new Callback<PlanetList>() {
             @Override
             public void onResponse(Call<PlanetList> call, Response<PlanetList> response) {
                 adapter = new MyAdapter(response.body());
-                Log.d("resps", response.body().toString());
+                progressDialog.dismiss();
                 recyclerView.setAdapter(adapter);
             }
 
             @Override
             public void onFailure(Call<PlanetList> call, Throwable t) {
+                progressDialog.dismiss();
                 t.printStackTrace();
             }
         });
@@ -46,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+    }
+
+    private void initializeProgressDialog() {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.show();
     }
 
 }
