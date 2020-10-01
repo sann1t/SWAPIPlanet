@@ -40,9 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
-        holder.name.setText(planetList.get(i).getName());
-        holder.name.setGravity(Gravity.CENTER);
-        holder.name.setTextSize(80);
+        holder.bind(planetList.get(i));
     }
 
     @Override
@@ -57,6 +55,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.name);
+        }
+
+        protected void bind(Planet planet) {
+            name.setText(planet.getName());
         }
     }
 }
