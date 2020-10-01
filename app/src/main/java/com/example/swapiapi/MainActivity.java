@@ -1,18 +1,18 @@
 package com.example.swapiapi;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.support.v7.widget.LinearLayoutManager;
+        import android.support.v7.widget.RecyclerView;
+        import android.util.Log;
 
-import com.example.swapiapi.adapters.MyAdapter;
-import com.example.swapiapi.models.PlanetList;
-import com.example.swapiapi.network.NetworkService;
+        import com.example.swapiapi.adapters.MyAdapter;
+        import com.example.swapiapi.models.PlanetList;
+        import com.example.swapiapi.network.NetworkService;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+        import retrofit2.Call;
+        import retrofit2.Callback;
+        import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<PlanetList> call, Response<PlanetList> response) {
                 adapter = new MyAdapter(response.body());
-                Log.d("resps", response.body().toString());
                 recyclerView.setAdapter(adapter);
             }
 
