@@ -15,7 +15,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class MainActivity extends AppCompatActivity {
+public class PlanetActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private MyAdapter adapter;
@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<PlanetList> call, Response<PlanetList> response) {
                 adapter = new MyAdapter(response.body());
-                Log.d("jss", response.body().toString());
                 recyclerView.setAdapter(adapter);
             }
 
