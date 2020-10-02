@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.ProgressBar;
 
 import com.example.swapiapi.adapters.MyAdapter;
 import com.example.swapiapi.models.PlanetList;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private MyAdapter adapter;
-    private ProgressDialog progressDialog;
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +35,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<PlanetList> call, Response<PlanetList> response) {
                 adapter = new MyAdapter(response.body());
-                progressDialog.dismiss();
+                progressBar.setVisibility(ProgressBar.INVISIBLE);
                 recyclerView.setAdapter(adapter);
             }
 
             @Override
             public void onFailure(Call<PlanetList> call, Throwable t) {
-                progressDialog.dismiss();
+                progressBar.setVisibility(ProgressBar.INVISIBLE);
                 t.printStackTrace();
             }
         });
@@ -53,9 +54,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeProgressDialog() {
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        progressDialog.show();
+        progressBar = findViewById(R.id.progress_bar);
+        progressBar.setVisibility(ProgressBar.VISIBLE);
     }
 
 }
