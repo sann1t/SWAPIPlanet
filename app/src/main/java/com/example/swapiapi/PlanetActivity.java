@@ -13,7 +13,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity{
+public class PlanetActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private PlanetList planetList;
