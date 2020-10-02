@@ -35,7 +35,7 @@ public class PlanetActivity extends AppCompatActivity {
 
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
                     planetList = response.body();
-                    adapter = new MyAdapter(planetList);
+                    adapter = new MyAdapter(planetList, PlanetActivity.this);
                     recyclerView.setAdapter(adapter);
 
                 }
@@ -67,7 +67,7 @@ public class PlanetActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         planetList = (PlanetList) savedInstanceState.getSerializable("PlaneList");
-        adapter = new MyAdapter(planetList);
+        adapter = new MyAdapter(planetList, this);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);
     }
