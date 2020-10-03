@@ -3,7 +3,9 @@ package com.example.swapiapi.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Planet {
+import java.io.Serializable;
+
+public class Planet implements Serializable {
 
 
     @SerializedName("name")
@@ -105,5 +107,6 @@ public class Planet {
     public void setPopulation(String population) {
         this.population = population;
     }
+
 
 }
