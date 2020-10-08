@@ -1,9 +1,10 @@
 package com.example.swapiapi.network;
 
+import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class NetworkService {
+public class NetworkService<T> {
 
     private static NetworkService mInstance;
     private static final String BASE_URL = "https://swapi.dev/api/ ";
