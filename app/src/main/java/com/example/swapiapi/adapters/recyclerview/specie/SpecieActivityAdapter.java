@@ -1,4 +1,4 @@
-package com.example.swapiapi.adapters.recyclerview;
+package com.example.swapiapi.adapters.recyclerview.specie;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,14 +16,12 @@ import com.example.swapiapi.models.species.SpeciesList;
 
 import java.util.List;
 
-public class SpecieActivityAdapter extends RecyclerView.Adapter<SpecieActivityAdapter.SpecieActivityViewHolder> {
+public class SpecieActivityAdapter extends RecyclerView.Adapter<SpecieActivityViewHolder> {
 
     private List<Specie> specieList;
-    private Context parent;
 
-    public SpecieActivityAdapter(SpeciesList speciesList, Context parent) {
+    public SpecieActivityAdapter(SpeciesList speciesList) {
         this.specieList = speciesList.getResults();
-        this.parent = parent;
     }
 
     @NonNull
@@ -43,36 +41,5 @@ public class SpecieActivityAdapter extends RecyclerView.Adapter<SpecieActivityAd
     @Override
     public int getItemCount() {
         return specieList.size();
-    }
-
-    public class SpecieActivityViewHolder extends RecyclerView.ViewHolder {
-
-        private Specie specie;
-        private TextView name;
-
-        public SpecieActivityViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            name = itemView.findViewById(R.id.name);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startNewActivity();
-                }
-            });
-        }
-
-        private void startNewActivity() {
-            Intent intent = new Intent(parent, SpecieActivityInfo.class);
-            intent.putExtra("Specie", specie);
-            parent.startActivity(intent);
-        }
-
-        public void bind(Specie specie){
-            this.specie = specie;
-
-            name.setText(specie.getName());
-        }
     }
 }

@@ -7,11 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ProgressBar;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.adapters.recyclerview.StarShipActivityAdapter;
-import com.example.swapiapi.adapters.recyclerview.VehicleActivityAdapter;
-import com.example.swapiapi.categoryActivity.starships.StarShipActivity;
-import com.example.swapiapi.models.starships.StarShipsList;
-import com.example.swapiapi.models.vehicles.Vehicle;
+import com.example.swapiapi.adapters.recyclerview.vehicle.VehicleActivityAdapter;
 import com.example.swapiapi.models.vehicles.VehiclesList;
 import com.example.swapiapi.network.NetworkService;
 
@@ -40,7 +36,7 @@ public class VehicleActivity extends AppCompatActivity {
                 public void onResponse(Call<VehiclesList> call, Response<VehiclesList> response) {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
                     vehiclesList = response.body();
-                    adapter = new VehicleActivityAdapter(vehiclesList, VehicleActivity.this);
+                    adapter = new VehicleActivityAdapter(vehiclesList);
                     recyclerView.setAdapter(adapter);
                 }
 
@@ -71,7 +67,7 @@ public class VehicleActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         vehiclesList = (VehiclesList) savedInstanceState.getSerializable("VehiclesList");
-        adapter = new VehicleActivityAdapter(vehiclesList, this);
+        adapter = new VehicleActivityAdapter(vehiclesList);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);
     }

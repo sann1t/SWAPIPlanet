@@ -1,7 +1,6 @@
 package com.example.swapiapi.adapters.recyclerview;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,19 +10,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.swapiapi.categoryActivity.peoples.PeopleActivity;
+import com.example.swapiapi.CallBackStartNewActivity;
 import com.example.swapiapi.R;
-import com.example.swapiapi.categoryActivity.planets.PlanetActivity;
-import com.example.swapiapi.categoryActivity.species.SpecieActivity;
-import com.example.swapiapi.categoryActivity.starships.StarShipActivity;
-import com.example.swapiapi.categoryActivity.vehicles.VehicleActivity;
 
 public class StartActivityAdapter extends RecyclerView.Adapter<StartActivityAdapter.ViewHolderForStartActivity> {
 
     private String[] starWarsInfo = {"vehicles", "peoples", "starShips", "planets", "species"};
     private Context context;
+    private CallBackStartNewActivity callBackStartNewActivity;
 
-    public StartActivityAdapter(Context context) {
+    public StartActivityAdapter(Context context, CallBackStartNewActivity callBackStartNewActivity) {
+        this.callBackStartNewActivity = callBackStartNewActivity;
         this.context = context;
     }
 
@@ -46,28 +43,6 @@ public class StartActivityAdapter extends RecyclerView.Adapter<StartActivityAdap
         return starWarsInfo.length;
     }
 
-    private void startCategoryActivity(String nameCategory) {
-        Intent  intent;
-        switch(nameCategory) {
-            case "vehicles" :
-                intent = new Intent(context, VehicleActivity.class);
-                break;
-            case "peoples" :
-                intent = new Intent(context, PeopleActivity.class);
-                break;
-            case "starShips" :
-                intent = new Intent(context, StarShipActivity.class);
-                break;
-            case "planets" :
-                intent = new Intent(context, PlanetActivity.class);
-                break;
-            case "species" :
-                intent = new Intent(context, SpecieActivity.class);
-                break;
-            default: intent = null;
-        }
-        context.startActivity(intent);
-    }
 
     protected class ViewHolderForStartActivity extends RecyclerView.ViewHolder {
 
@@ -83,7 +58,7 @@ public class StartActivityAdapter extends RecyclerView.Adapter<StartActivityAdap
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startCategoryActivity(nameCategory);
+                    callBackStartNewActivity.startNewActivity(nameCategory);
                 }
             });
         }

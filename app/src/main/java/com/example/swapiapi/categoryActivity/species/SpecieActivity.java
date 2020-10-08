@@ -7,10 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ProgressBar;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.adapters.recyclerview.PeopleActivityAdapter;
-import com.example.swapiapi.adapters.recyclerview.SpecieActivityAdapter;
-import com.example.swapiapi.categoryActivity.peoples.PeopleActivity;
-import com.example.swapiapi.models.peoples.PeoplesList;
+import com.example.swapiapi.adapters.recyclerview.specie.SpecieActivityAdapter;
 import com.example.swapiapi.models.species.SpeciesList;
 import com.example.swapiapi.network.NetworkService;
 
@@ -39,7 +36,7 @@ public class SpecieActivity extends AppCompatActivity {
                 public void onResponse(Call<SpeciesList> call, Response<SpeciesList> response) {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
                     speciesList = response.body();
-                    adapter = new SpecieActivityAdapter(speciesList, SpecieActivity.this);
+                    adapter = new SpecieActivityAdapter(speciesList);
                     recyclerView.setAdapter(adapter);
                 }
 
@@ -70,7 +67,7 @@ public class SpecieActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         speciesList = (SpeciesList) savedInstanceState.getSerializable("SpeciesList");
-        adapter = new SpecieActivityAdapter(speciesList, this);
+        adapter = new SpecieActivityAdapter(speciesList);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);
     }

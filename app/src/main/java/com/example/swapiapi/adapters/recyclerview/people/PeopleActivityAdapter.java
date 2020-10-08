@@ -1,4 +1,4 @@
-package com.example.swapiapi.adapters.recyclerview;
+package com.example.swapiapi.adapters.recyclerview.people;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,13 +16,11 @@ import com.example.swapiapi.models.peoples.PeoplesList;
 
 import java.util.List;
 
-public class PeopleActivityAdapter extends RecyclerView.Adapter<PeopleActivityAdapter.PeopleActivityViewHolder> {
+public class PeopleActivityAdapter extends RecyclerView.Adapter<PeopleActivityViewHolder> {
 
     private List<People> peoplesList;
-    private Context parent;
 
-    public PeopleActivityAdapter(PeoplesList peoplesList, Context parent) {
-        this.parent = parent;
+    public PeopleActivityAdapter(PeoplesList peoplesList) {
         this.peoplesList = peoplesList.getResults();
     }
 
@@ -43,33 +41,5 @@ public class PeopleActivityAdapter extends RecyclerView.Adapter<PeopleActivityAd
     @Override
     public int getItemCount() {
         return peoplesList.size();
-    }
-
-    public class PeopleActivityViewHolder extends RecyclerView.ViewHolder{
-
-        private People people;
-        private TextView name;
-
-        public PeopleActivityViewHolder(@NonNull View itemView) {
-            super(itemView);
-            name = itemView.findViewById(R.id.name);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startNewActivity();
-                }
-            });
-        }
-
-        private void startNewActivity() {
-            Intent intent = new Intent(parent, PeopleActivityInfo.class);
-            intent.putExtra("People", people);
-            parent.startActivity(intent);
-        }
-        private void bind(People people) {
-            this.people = people;
-            name.setText(people.getName());
-        }
     }
 }
