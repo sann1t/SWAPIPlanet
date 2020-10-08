@@ -11,8 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlanetInfo"></activity>
-        <activity android:name=".PlanetActivity">
+        <activity android:name=".categoryActivity.peoples.PeopleActivityInfo"></activity>
+        <activity android:name=".categoryActivity.planets.PlanetActivityInfo"></activity>
+        <activity android:name=".categoryActivity.species.SpecieActivityInfo"></activity>
+        <activity android:name=".categoryActivity.starships.StarShipActivityInfo"></activity>
+        <activity android:name=".categoryActivity.vehicles.VehicleActivityInfo"></activity>
+        <activity android:name=".categoryActivity.starships.StarShipActivity" />
+        <activity android:name=".categoryActivity.species.SpecieActivity" />
+        <activity android:name=".categoryActivity.peoples.PeopleActivity" />
+        <activity android:name=".categoryActivity.vehicles.VehicleActivity" />
+        <activity android:name=".categoryActivity.planets.PlanetActivity" />
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

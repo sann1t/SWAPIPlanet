@@ -1,4 +1,4 @@
-package com.example.swapiapi.models;
+package com.example.swapiapi.models.planets;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -8,32 +8,14 @@ import java.io.Serializable;
 public class Planet implements Serializable {
 
 
-    @SerializedName("name")
-    @Expose
     private String name;
-    @SerializedName("rotation_period")
-    @Expose
-    private String rotationPeriod;
-    @SerializedName("orbital_period")
-    @Expose
-    private String orbitalPeriod;
-    @SerializedName("diameter")
-    @Expose
+    private String rotation_period;
+    private String orbital_period;
     private String diameter;
-    @SerializedName("climate")
-    @Expose
     private String climate;
-    @SerializedName("gravity")
-    @Expose
     private String gravity;
-    @SerializedName("terrain")
-    @Expose
     private String terrain;
-    @SerializedName("surface_water")
-    @Expose
-    private String surfaceWater;
-    @SerializedName("population")
-    @Expose
+    private String surface_water;
     private String population;
 
     public String getName() {
@@ -45,19 +27,19 @@ public class Planet implements Serializable {
     }
 
     public String getRotationPeriod() {
-        return rotationPeriod;
+        return rotation_period;
     }
 
     public void setRotationPeriod(String rotationPeriod) {
-        this.rotationPeriod = rotationPeriod;
+        this.rotation_period = rotationPeriod;
     }
 
     public String getOrbitalPeriod() {
-        return orbitalPeriod;
+        return orbital_period;
     }
 
     public void setOrbitalPeriod(String orbitalPeriod) {
-        this.orbitalPeriod = orbitalPeriod;
+        this.orbital_period = orbitalPeriod;
     }
 
     public String getDiameter() {
@@ -93,11 +75,11 @@ public class Planet implements Serializable {
     }
 
     public String getSurfaceWater() {
-        return surfaceWater;
+        return surface_water;
     }
 
     public void setSurfaceWater(String surfaceWater) {
-        this.surfaceWater = surfaceWater;
+        this.surface_water = surfaceWater;
     }
 
     public String getPopulation() {
