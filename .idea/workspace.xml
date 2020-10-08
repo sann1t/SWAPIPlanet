@@ -14,70 +14,33 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa68e6a6-e044-466e-b0b7-7d366d6ef9c9" name="Default Changelist" comment="2">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_6_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_6_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_6_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_6_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/StartActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/PeopleActivityAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/PlanetActivityAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/SpecieActivityAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/StarShipActivityAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/StartActivityAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/VehicleActivityAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/peoples/PeopleActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/peoples/PeopleActivityInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/planets/PlanetActivityInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/species/SpecieActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/species/SpecieActivityInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/starships/StarShipActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/starships/StarShipActivityInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/vehicles/VehicleActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/vehicles/VehicleActivityInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/peoples/People.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/peoples/PeoplesList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/planets/PlanetsList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/species/Specie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/species/SpeciesList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starships/StarShip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starships/StarShipsList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/vehicles/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/vehicles/VehiclesList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_people.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_people_info.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_specie.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_star_ship.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_vehicle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_category_activity.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_start_activity.xml" afterDir="false" />
+    <list default="true" id="aa68e6a6-e044-466e-b0b7-7d366d6ef9c9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/CallBackStartNewActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/people/PeopleActivityViewHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/planet/PlanetActivityViewHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/specie/SpecieActivityViewHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/starship/StarShipActivityViewHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/vehicle/VehicleActivityViewHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/PlanetActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/planets/PlanetActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/PlanetInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/MyAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/Planet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/planets/Planet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/PlanetList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/network/NetworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/network/NetworkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/network/SwapiApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/network/SwapiApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_planet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_planet_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_category_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/toolbar_category_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/StartActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/StartActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/PeopleActivityAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/people/PeopleActivityAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/PlanetActivityAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/planet/PlanetActivityAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/SpecieActivityAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/specie/SpecieActivityAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/StarShipActivityAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/starship/StarShipActivityAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/StartActivityAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/StartActivityAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/VehicleActivityAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/vehicle/VehicleActivityAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/peoples/PeopleActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/peoples/PeopleActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/planets/PlanetActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/planets/PlanetActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/species/SpecieActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/species/SpecieActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/starships/StarShipActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/starships/StarShipActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/vehicles/VehicleActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/vehicles/VehicleActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,33 +72,33 @@
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="gradle" value="6" />
-          <entry key="java" value="268" />
-          <entry key="xml" value="96" />
+          <entry key="java" value="296" />
+          <entry key="xml" value="98" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="6" />
-          <entry key="JAVA" value="268" />
+          <entry key="JAVA" value="296" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="XML" value="96" />
+          <entry key="XML" value="98" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="70" />
           <entry key="gradle" value="178" />
-          <entry key="java" value="15015" />
-          <entry key="txt" value="27" />
-          <entry key="xml" value="1437" />
+          <entry key="java" value="15227" />
+          <entry key="txt" value="52" />
+          <entry key="xml" value="1477" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="178" />
-          <entry key="JAVA" value="15015" />
-          <entry key="PLAIN_TEXT" value="97" />
-          <entry key="XML" value="1437" />
+          <entry key="JAVA" value="15227" />
+          <entry key="PLAIN_TEXT" value="122" />
+          <entry key="XML" value="1477" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -152,13 +115,42 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/StartActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/StartActivityAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="102" column="156" selection-start-line="102" selection-start-column="156" selection-end-line="102" selection-end-column="156" />
+            <state relative-caret-position="391">
+              <caret line="88" column="74" selection-start-line="88" selection-start-column="74" selection-end-line="88" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2976#3165#0" expanded="true" />
+                <element signature="e#3164#3165#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/people/PeopleActivityViewHolder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3">
+              <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/CallBackStartNewActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -170,6 +162,7 @@
       <list>
         <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -193,19 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/network/DesiroalizerJSON.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/network/Deserializer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starwars/Category.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starwars/planets/PlanetList.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starwars/vehicles/PlanetList.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starwars/vehicles/VehiclesList.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starwars/starships/PlanetList.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starwars/starships/StarShipsList.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starwars/species/PlanetList.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starwars/species/SpeciesList.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starwars/peoples/PlanetList.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starwars/peoples/PeoplesList.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/CategoryActivityAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/CategoryActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/planet/CategoryActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/planet/PlanetActivity.java" />
@@ -213,15 +193,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/network/NetworkService.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_people.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_planet.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/planets/PlanetActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/peoples/PeopleActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_specie.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/species/SpecieActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_star_ship.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/starships/StarShipActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/network/SwapiApi.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_vehicle.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/vehicles/VehicleActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_people_info.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/PeopleActivityAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_category_info.xml" />
@@ -243,7 +218,25 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/StarShipActivityAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_category_activity.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_start_activity.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/people/PeopleActivityViewHolder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/people/PeopleActivityAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/planet/PlanetActivityViewHolder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/planet/PlanetActivityAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/specie/SpecieActivtyViewHolder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/starship/StarShipActivityViewHolder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/vehicle/VehicleActivityViewHolder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/peoples/PeopleActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/planets/PlanetActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/species/SpecieActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/starships/StarShipActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/vehicles/VehicleActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/specie/SpecieActivityAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/starship/StarShipActivityAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/vehicle/VehicleActivityAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/CallBackStartNewActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/StartActivityAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/StartActivity.java" />
       </list>
     </option>
   </component>
@@ -629,7 +622,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601663162506</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added start activity">
+      <created>1602149939892</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602149939892</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -704,44 +704,12 @@
     <MESSAGE value="add progress bar" />
     <MESSAGE value="initialization RecyclerView in a separate method" />
     <MESSAGE value="add planet info activity" />
-    <option name="LAST_COMMIT_MESSAGE" value="add planet info activity" />
+    <MESSAGE value="added start activity" />
+    <option name="LAST_COMMIT_MESSAGE" value="added start activity" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starship/StarShip.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/StarShipList.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starwars/StarWarsInfo.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/network/DesiroalizerJSON.java" />
-    <entry file="file://$USER_HOME$/Documents/my/Android/projects/WeatherApp/app/src/main/java/com/example/weatherapp/network/Deserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/network/Deserializer.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starwars/Category.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/StartActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/starships/StarShipsList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -775,13 +743,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/species/SpecieActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="75" column="5" selection-start-line="21" selection-end-line="75" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_specie.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -794,6 +755,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -809,20 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/vehicles/VehicleActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="76" column="5" lean-forward="true" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/starships/StarShipActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="76" column="5" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="76" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -857,16 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/planets/PlanetActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="50" column="77" selection-start-line="50" selection-start-column="77" selection-end-line="50" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_category_info.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -875,55 +815,10 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/PlanetActivityAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="74" column="54" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
-            <element signature="e#1772#1773#0" expanded="true" />
-            <element signature="e#2159#2331#0" expanded="true" />
-            <element signature="e#2330#2331#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/SpecieActivityAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="66" column="59" lean-forward="true" selection-start-line="66" selection-start-column="59" selection-end-line="66" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1772#1944#0" expanded="true" />
-            <element signature="e#1943#1944#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/models/planets/PlanetsList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/VehicleActivityAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="65" column="61" lean-forward="true" selection-start-line="65" selection-start-column="61" selection-end-line="65" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1796#1969#0" expanded="true" />
-            <element signature="e#1968#1969#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/peoples/PeopleActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1020,30 +915,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/PeopleActivityAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="66" column="35" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_star_ship.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="43" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_category_activity.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1061,25 +938,180 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/StarShipActivityAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_star_ship.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="238">
+          <caret line="14" column="43" selection-end-line="22" selection-end-column="17" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/planet/PlanetActivityViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1961#2133#0" expanded="true" />
-            <element signature="e#2132#2133#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/people/PeopleActivityAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/planet/PlanetActivityAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/specie/SpecieActivityViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/starship/StarShipActivityViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/vehicle/VehicleActivityViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/species/SpecieActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="69" column="55" selection-start-line="69" selection-start-column="55" selection-end-line="69" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/starships/StarShipActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="70" column="59" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/vehicles/VehicleActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/planets/PlanetActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/categoryActivity/peoples/PeopleActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="70" column="55" selection-start-line="70" selection-start-column="55" selection-end-line="70" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/specie/SpecieActivityAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/starship/StarShipActivityAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/vehicle/VehicleActivityAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/people/PeopleActivityViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/CallBackStartNewActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/adapters/recyclerview/StartActivityAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="102" column="156" selection-start-line="102" selection-start-column="156" selection-end-line="102" selection-end-column="156" />
+        <state relative-caret-position="391">
+          <caret line="88" column="74" selection-start-line="88" selection-start-column="74" selection-end-line="88" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2976#3165#0" expanded="true" />
+            <element signature="e#3164#3165#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/swapiapi/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
         </state>
       </provider>
     </entry>

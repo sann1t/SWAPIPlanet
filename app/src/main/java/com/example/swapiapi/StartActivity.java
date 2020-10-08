@@ -1,17 +1,24 @@
 package com.example.swapiapi;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
 
 import com.example.swapiapi.adapters.recyclerview.StartActivityAdapter;
+import com.example.swapiapi.categoryActivity.peoples.PeopleActivity;
+import com.example.swapiapi.categoryActivity.planets.PlanetActivity;
+import com.example.swapiapi.categoryActivity.species.SpecieActivity;
+import com.example.swapiapi.categoryActivity.starships.StarShipActivity;
+import com.example.swapiapi.categoryActivity.vehicles.VehicleActivity;
 
-public class StartActivity extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity implements CallBackStartNewActivity {
 
     private RecyclerView recyclerView;
     private StartActivityAdapter startActivityAdapter;
-
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +32,31 @@ public class StartActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.start_activity_recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        startActivityAdapter = new StartActivityAdapter(this);
+        startActivityAdapter = new StartActivityAdapter(this, this);
         recyclerView.setAdapter(startActivityAdapter);
     }
 
+    @Override
+    public void startNewActivity(String nameCategory) {
+        Intent intent;
+        switch(nameCategory) {
+            case "vehicles" :
+                intent = new Intent(this, VehicleActivity.class);
+                break;
+            case "peoples" :
+                intent = new Intent(this, PeopleActivity.class);
+                break;
+            case "starShips" :
+                intent = new Intent(this, StarShipActivity.class);
+                break;
+            case "planets" :
+                intent = new Intent(this, PlanetActivity.class);
+                break;
+            case "species" :
+                intent = new Intent(this, SpecieActivity.class);
+                break;
+            default: intent = null;
+        }
+        this.startActivity(intent);
+    }
 }

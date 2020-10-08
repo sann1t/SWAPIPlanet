@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ProgressBar;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.adapters.recyclerview.PlanetActivityAdapter;
+import com.example.swapiapi.adapters.recyclerview.planet.PlanetActivityAdapter;
 import com.example.swapiapi.models.planets.PlanetsList;
 import com.example.swapiapi.network.NetworkService;
 
@@ -36,7 +36,7 @@ public class PlanetActivity extends AppCompatActivity {
                 public void onResponse(Call<PlanetsList> call, Response<PlanetsList> response) {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
                     planetList = response.body();
-                    adapter = new PlanetActivityAdapter(response.body(), PlanetActivity.this);
+                    adapter = new PlanetActivityAdapter(response.body());
                     recyclerView.setAdapter(adapter);
 
                 }
@@ -68,7 +68,7 @@ public class PlanetActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         planetList = (PlanetsList) savedInstanceState.getSerializable("PlaneList");
-        adapter = new PlanetActivityAdapter(planetList, this);
+        adapter = new PlanetActivityAdapter(planetList);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);
     }

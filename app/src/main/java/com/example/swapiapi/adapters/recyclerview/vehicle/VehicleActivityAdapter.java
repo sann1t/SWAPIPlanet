@@ -1,4 +1,4 @@
-package com.example.swapiapi.adapters.recyclerview;
+package com.example.swapiapi.adapters.recyclerview.vehicle;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,14 +16,12 @@ import com.example.swapiapi.models.vehicles.VehiclesList;
 
 import java.util.List;
 
-public class VehicleActivityAdapter extends RecyclerView.Adapter<VehicleActivityAdapter.VehicleActivityViewHolder> {
+public class VehicleActivityAdapter extends RecyclerView.Adapter<VehicleActivityViewHolder> {
 
-    private Context parent;
     private List<Vehicle> vehicleList;
 
-    public VehicleActivityAdapter(VehiclesList vehiclesList, Context parent) {
+    public VehicleActivityAdapter(VehiclesList vehiclesList) {
         this.vehicleList = vehiclesList.getResults();
-        this.parent = parent;
     }
 
     @NonNull
@@ -45,32 +43,4 @@ public class VehicleActivityAdapter extends RecyclerView.Adapter<VehicleActivity
         return vehicleList.size();
     }
 
-    public class VehicleActivityViewHolder extends RecyclerView.ViewHolder {
-
-        private TextView name;
-        private Vehicle vehicle;
-
-        public VehicleActivityViewHolder(@NonNull View itemView) {
-            super(itemView);
-            name = itemView.findViewById(R.id.name);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startNewActivity();
-                }
-            });
-        }
-
-        private void startNewActivity() {
-            Intent intent = new Intent(parent, VehicleActivityInfo.class);
-            intent.putExtra("Vehicle", vehicle);
-            parent.startActivity(intent);
-        }
-
-        public void bind(Vehicle vehicle) {
-            this.vehicle = vehicle;
-            name.setText(vehicle.getName());
-        }
-    }
 }

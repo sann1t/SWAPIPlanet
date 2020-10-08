@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ProgressBar;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.adapters.recyclerview.PeopleActivityAdapter;
+import com.example.swapiapi.adapters.recyclerview.people.PeopleActivityAdapter;
 import com.example.swapiapi.models.peoples.PeoplesList;
 import com.example.swapiapi.network.NetworkService;
 
@@ -36,7 +36,7 @@ public class PeopleActivity extends AppCompatActivity {
                 public void onResponse(Call<PeoplesList> call, Response<PeoplesList> response) {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
                     peoplesList = response.body();
-                    adapter = new PeopleActivityAdapter(peoplesList, PeopleActivity.this);
+                    adapter = new PeopleActivityAdapter(peoplesList);
                     recyclerView.setAdapter(adapter);
 
                 }
@@ -68,7 +68,7 @@ public class PeopleActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         peoplesList = (PeoplesList) savedInstanceState.getSerializable("PeopleList");
-        adapter = new PeopleActivityAdapter(peoplesList, this);
+        adapter = new PeopleActivityAdapter(peoplesList);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);
     }

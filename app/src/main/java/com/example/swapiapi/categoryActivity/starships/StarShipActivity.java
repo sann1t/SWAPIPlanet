@@ -7,10 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ProgressBar;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.adapters.recyclerview.SpecieActivityAdapter;
-import com.example.swapiapi.adapters.recyclerview.StarShipActivityAdapter;
-import com.example.swapiapi.categoryActivity.species.SpecieActivity;
-import com.example.swapiapi.models.species.SpeciesList;
+import com.example.swapiapi.adapters.recyclerview.starship.StarShipActivityAdapter;
 import com.example.swapiapi.models.starships.StarShipsList;
 import com.example.swapiapi.network.NetworkService;
 
@@ -40,7 +37,7 @@ public class StarShipActivity extends AppCompatActivity {
                 public void onResponse(Call<StarShipsList> call, Response<StarShipsList> response) {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
                     starShipsList = response.body();
-                    adapter = new StarShipActivityAdapter(starShipsList, StarShipActivity.this);
+                    adapter = new StarShipActivityAdapter(starShipsList);
                     recyclerView.setAdapter(adapter);
                 }
 
@@ -71,7 +68,7 @@ public class StarShipActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         starShipsList = (StarShipsList) savedInstanceState.getSerializable("StarShipsList");
-        adapter = new StarShipActivityAdapter(starShipsList, this);
+        adapter = new StarShipActivityAdapter(starShipsList);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);
     }
