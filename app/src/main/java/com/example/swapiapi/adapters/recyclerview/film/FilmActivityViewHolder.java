@@ -1,5 +1,4 @@
-package com.example.swapiapi.adapters.recyclerview.people;
-
+package com.example.swapiapi.adapters.recyclerview.film;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -8,16 +7,17 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.categoryActivity.peoples.PeopleActivityInfo;
-import com.example.swapiapi.models.peoples.People;
+import com.example.swapiapi.categoryActivity.films.FilmActivityInfo;
+import com.example.swapiapi.models.films.Film;
 
-public class PeopleActivityViewHolder extends RecyclerView.ViewHolder{
+public class FilmActivityViewHolder extends RecyclerView.ViewHolder {
 
-    private People people;
+    private Film film;
     private TextView name;
 
-    public PeopleActivityViewHolder(@NonNull View itemView) {
+    public FilmActivityViewHolder(@NonNull View itemView) {
         super(itemView);
+
         name = itemView.findViewById(R.id.name);
 
         itemView.setOnClickListener(new View.OnClickListener() {
@@ -28,14 +28,15 @@ public class PeopleActivityViewHolder extends RecyclerView.ViewHolder{
         });
     }
 
+
     private void startNewActivity() {
-        Intent intent = new Intent(itemView.getContext(), PeopleActivityInfo.class);
-        intent.putExtra("People", people);
+        Intent intent = new Intent(itemView.getContext(), FilmActivityInfo.class);
+        intent.putExtra("Film", film);
         itemView.getContext().startActivity(intent);
     }
 
-    protected void bind(People people) {
-        this.people = people;
-        name.setText(people.getName());
+    protected void bind(Film film) {
+        this.film = film;
+        name.setText(film.getTitle());
     }
 }

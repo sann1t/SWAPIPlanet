@@ -15,7 +15,7 @@ import com.example.swapiapi.R;
 
 public class StartActivityAdapter extends RecyclerView.Adapter<StartActivityAdapter.ViewHolderForStartActivity> {
 
-    private String[] starWarsInfo = {"vehicles", "peoples", "starShips", "planets", "species"};
+    private String[] starWarsInfo = {"vehicles", "peoples", "starShips", "planets", "species", "films"};
     private Context context;
     private CallBackStartNewActivity callBackStartNewActivity;
 

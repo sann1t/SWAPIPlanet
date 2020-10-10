@@ -1,5 +1,6 @@
 package com.example.swapiapi.network;
 
+import com.example.swapiapi.models.films.FilmsList;
 import com.example.swapiapi.models.peoples.PeoplesList;
 import com.example.swapiapi.models.planets.PlanetsList;
 import com.example.swapiapi.models.species.SpeciesList;
@@ -17,14 +18,16 @@ public interface SwapiApi {
     @GET("people/")
     Call<PeoplesList> getPeoplesList();
 
-
     @GET("vehicles/")
     Call<VehiclesList> getVehiclesList();
 
     @GET("starships/")
     Call<StarShipsList> getStarShipsList();
 
-      @GET("species/")
+    @GET("species/")
     Call<SpeciesList> getSpeciesList();
+
+    @GET("films/")
+    Call<FilmsList> getFilmsList();
 
 }

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.support.v7.widget.Toolbar;
 
 import com.example.swapiapi.adapters.recyclerview.StartActivityAdapter;
+import com.example.swapiapi.categoryActivity.films.FilmActivity;
 import com.example.swapiapi.categoryActivity.peoples.PeopleActivity;
 import com.example.swapiapi.categoryActivity.planets.PlanetActivity;
 import com.example.swapiapi.categoryActivity.species.SpecieActivity;
@@ -57,6 +58,9 @@ public class StartActivity extends AppCompatActivity implements CallBackStartNew
                 break;
             case "species" :
                 intent = new Intent(this, SpecieActivity.class);
+                break;
+            case "films" :
+                intent = new Intent(this, FilmActivity.class);
                 break;
             default: intent = null;
         }

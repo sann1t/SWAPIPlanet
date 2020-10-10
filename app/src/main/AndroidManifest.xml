@@ -16,8 +16,10 @@
         <activity android:name=".categoryActivity.species.SpecieActivityInfo"></activity>
         <activity android:name=".categoryActivity.starships.StarShipActivityInfo"></activity>
         <activity android:name=".categoryActivity.vehicles.VehicleActivityInfo"></activity>
+        <activity android:name=".categoryActivity.films.FilmActivityInfo"></activity>
         <activity android:name=".categoryActivity.starships.StarShipActivity" />
         <activity android:name=".categoryActivity.species.SpecieActivity" />
+        <activity android:name=".categoryActivity.films.FilmActivity" />
         <activity android:name=".categoryActivity.peoples.PeopleActivity" />
         <activity android:name=".categoryActivity.vehicles.VehicleActivity" />
         <activity android:name=".categoryActivity.planets.PlanetActivity" />
