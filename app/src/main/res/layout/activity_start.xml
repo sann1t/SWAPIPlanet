@@ -5,10 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include layout="@layout/toolbar_category_info"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/start_activity_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
         app:layout_behavior="vertical" />
 
 

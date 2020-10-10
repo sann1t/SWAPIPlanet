@@ -1,10 +1,15 @@
 package com.example.swapiapi.categoryActivity.peoples;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.swapiapi.R;
 import com.example.swapiapi.adapters.recyclerview.people.PeopleActivityAdapter;
@@ -18,6 +23,7 @@ import retrofit2.Response;
 public class PeopleActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+    private Toolbar toolbar;
     private PeoplesList peoplesList;
     private PeopleActivityAdapter adapter;
     private ProgressBar progressBar;
@@ -25,10 +31,11 @@ public class PeopleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_people);
+        setContentView(R.layout.activity_category);
 
         initializeProgressBar();
         initializeRecyclerView();
+        initializeToolbar();
 
         if(savedInstanceState == null) {
             NetworkService.getInstance().getSwapApi().getPeoplesList().enqueue(new Callback<PeoplesList>() {
@@ -48,14 +55,31 @@ public class PeopleActivity extends AppCompatActivity {
     }
 
     private void initializeRecyclerView() {
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_people);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
     }
 
     private void initializeProgressBar() {
-        progressBar = findViewById(R.id.progress_bar_people);
+        progressBar = findViewById(R.id.progress_bar);
         progressBar.setVisibility(ProgressBar.VISIBLE);
+    }
+
+    private void initializeToolbar() {
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("People");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

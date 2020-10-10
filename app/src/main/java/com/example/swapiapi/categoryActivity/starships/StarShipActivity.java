@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.ProgressBar;
 
 import com.example.swapiapi.R;
@@ -20,16 +22,18 @@ public class StarShipActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private StarShipsList starShipsList;
+    private Toolbar toolbar;
     private StarShipActivityAdapter adapter;
     private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_star_ship);
+        setContentView(R.layout.activity_category);
 
         initializeProgressBar();
         initializeRecyclerView();
+        initializeToolbar();
 
         if(savedInstanceState == null) {
             NetworkService.getInstance().getSwapApi().getStarShipsList().enqueue(new Callback<StarShipsList>() {
@@ -48,14 +52,30 @@ public class StarShipActivity extends AppCompatActivity {
     }
 
     private void initializeRecyclerView() {
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_star_ship);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
     }
 
     private void initializeProgressBar() {
-        progressBar = findViewById(R.id.progress_bar_star_ship);
+        progressBar = findViewById(R.id.progress_bar);
         progressBar.setVisibility(ProgressBar.VISIBLE);
+    }
+    private void initializeToolbar() {
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Star Ship");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

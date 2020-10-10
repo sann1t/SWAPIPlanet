@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
+import android.support.v7.widget.Toolbar;
 
 import com.example.swapiapi.adapters.recyclerview.StartActivityAdapter;
 import com.example.swapiapi.categoryActivity.peoples.PeopleActivity;
@@ -19,6 +20,7 @@ public class StartActivity extends AppCompatActivity implements CallBackStartNew
     private RecyclerView recyclerView;
     private StartActivityAdapter startActivityAdapter;
     private ImageView imageView;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class StartActivity extends AppCompatActivity implements CallBackStartNew
         setContentView(R.layout.activity_start);
 
         initializeRecyclerView();
+        initializeToolbar();
     }
 
     private void initializeRecyclerView() {
@@ -59,4 +62,10 @@ public class StartActivity extends AppCompatActivity implements CallBackStartNew
         }
         this.startActivity(intent);
     }
+
+    private void initializeToolbar() {
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
+
 }
