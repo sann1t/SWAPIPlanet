@@ -11,9 +11,7 @@ import android.widget.ProgressBar;
 
 import com.example.swapiapi.R;
 import com.example.swapiapi.adapters.recyclerview.film.FilmActivityAdapter;
-import com.example.swapiapi.adapters.recyclerview.people.PeopleActivityAdapter;
-import com.example.swapiapi.models.films.FilmsList;
-import com.example.swapiapi.models.peoples.PeoplesList;
+import com.example.swapiapi.models.films.Films;
 import com.example.swapiapi.network.NetworkService;
 
 import retrofit2.Call;
@@ -26,7 +24,7 @@ public class FilmActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private Toolbar toolbar;
-    private FilmsList filmsList;
+    private Films films;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,18 +36,18 @@ public class FilmActivity extends AppCompatActivity {
         initializeToolbar();
 
         if (savedInstanceState == null) {
-            NetworkService.getInstance().getSwapApi().getFilmsList().enqueue(new Callback<FilmsList>() {
+            NetworkService.getInstance().getSwapApi().getFilmsList().enqueue(new Callback<Films>() {
                 @Override
-                public void onResponse(Call<FilmsList> call, Response<FilmsList> response) {
+                public void onResponse(Call<Films> call, Response<Films> response) {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
-                    filmsList = response.body();
+                    films = response.body();
                     adapter = new FilmActivityAdapter(response.body());
                     recyclerView.setAdapter(adapter);
 
                 }
 
                 @Override
-                public void onFailure(Call<FilmsList> call, Throwable t) {
+                public void onFailure(Call<Films> call, Throwable t) {
                     t.printStackTrace();
                 }
             });
@@ -86,15 +84,15 @@ public class FilmActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putSerializable("FilmsList", filmsList);
+        outState.putSerializable("FilmsList", films);
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        filmsList = (FilmsList) savedInstanceState.getSerializable("FilmsList");
-        adapter = new FilmActivityAdapter(filmsList);
+        films = (Films) savedInstanceState.getSerializable("FilmsList");
+        adapter = new FilmActivityAdapter(films);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);
     }

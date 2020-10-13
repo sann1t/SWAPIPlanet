@@ -1,18 +1,14 @@
 package com.example.swapiapi.adapters.recyclerview.specie;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.categoryActivity.species.SpecieActivityInfo;
 import com.example.swapiapi.models.species.Specie;
-import com.example.swapiapi.models.species.SpeciesList;
+import com.example.swapiapi.models.species.Species;
 
 import java.util.List;
 
@@ -20,7 +16,7 @@ public class SpecieActivityAdapter extends RecyclerView.Adapter<SpecieActivityVi
 
     private List<Specie> specieList;
 
-    public SpecieActivityAdapter(SpeciesList speciesList) {
+    public SpecieActivityAdapter(Species speciesList) {
         this.specieList = speciesList.getResults();
     }
 

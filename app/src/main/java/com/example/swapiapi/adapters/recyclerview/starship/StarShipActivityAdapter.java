@@ -1,18 +1,14 @@
 package com.example.swapiapi.adapters.recyclerview.starship;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.categoryActivity.starships.StarShipActivityInfo;
 import com.example.swapiapi.models.starships.StarShip;
-import com.example.swapiapi.models.starships.StarShipsList;
+import com.example.swapiapi.models.starships.StarShips;
 
 
 import java.util.List;
@@ -21,8 +17,8 @@ public class StarShipActivityAdapter extends RecyclerView.Adapter<StarShipActivi
 
     private List<StarShip> starShipList;
 
-    public StarShipActivityAdapter(StarShipsList starShipsList) {
-        this.starShipList = starShipsList.getResults();
+    public StarShipActivityAdapter(StarShips starShips) {
+        this.starShipList = starShips.getResults();
     }
 
     @NonNull

@@ -10,7 +10,7 @@ import android.widget.ProgressBar;
 
 import com.example.swapiapi.R;
 import com.example.swapiapi.adapters.recyclerview.planet.PlanetActivityAdapter;
-import com.example.swapiapi.models.planets.PlanetsList;
+import com.example.swapiapi.models.planets.Planets;
 import com.example.swapiapi.network.NetworkService;
 
 import retrofit2.Call;
@@ -20,7 +20,7 @@ import retrofit2.Response;
 public class PlanetActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private PlanetsList planetList;
+    private Planets planetList;
     private Toolbar toolbar;
     private PlanetActivityAdapter adapter;
     private ProgressBar progressBar;
@@ -35,9 +35,9 @@ public class PlanetActivity extends AppCompatActivity {
         initializeToolbar();
 
         if(savedInstanceState == null) {
-            NetworkService.getInstance().getSwapApi().getPlanetsList().enqueue(new Callback<PlanetsList>() {
+            NetworkService.getInstance().getSwapApi().getPlanetsList().enqueue(new Callback<Planets>() {
                 @Override
-                public void onResponse(Call<PlanetsList> call, Response<PlanetsList> response) {
+                public void onResponse(Call<Planets> call, Response<Planets> response) {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
                     planetList = response.body();
                     adapter = new PlanetActivityAdapter(response.body());
@@ -46,7 +46,7 @@ public class PlanetActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(Call<PlanetsList> call, Throwable t){t.printStackTrace();}
+                public void onFailure(Call<Planets> call, Throwable t){t.printStackTrace();}
             });
         }
     }
@@ -87,7 +87,7 @@ public class PlanetActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        planetList = (PlanetsList) savedInstanceState.getSerializable("PlaneList");
+        planetList = (Planets) savedInstanceState.getSerializable("PlaneList");
         adapter = new PlanetActivityAdapter(planetList);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);

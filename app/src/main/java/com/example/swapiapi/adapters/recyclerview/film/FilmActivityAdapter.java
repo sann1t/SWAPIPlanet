@@ -7,9 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.categoryActivity.films.FilmActivity;
 import com.example.swapiapi.models.films.Film;
-import com.example.swapiapi.models.films.FilmsList;
+import com.example.swapiapi.models.films.Films;
 
 import java.util.List;
 
@@ -17,8 +16,8 @@ public class FilmActivityAdapter extends RecyclerView.Adapter<FilmActivityViewHo
 
     private List<Film> filmsList;
 
-    public FilmActivityAdapter(FilmsList filmsList) {
-        this.filmsList = filmsList.getResults();
+    public FilmActivityAdapter(Films films) {
+        this.filmsList = films.getResults();
     }
 
     @NonNull

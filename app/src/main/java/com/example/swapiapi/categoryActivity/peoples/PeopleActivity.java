@@ -1,19 +1,16 @@
 package com.example.swapiapi.categoryActivity.peoples;
 
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.example.swapiapi.R;
 import com.example.swapiapi.adapters.recyclerview.people.PeopleActivityAdapter;
-import com.example.swapiapi.models.peoples.PeoplesList;
+import com.example.swapiapi.models.peoples.Peoples;
 import com.example.swapiapi.network.NetworkService;
 
 import retrofit2.Call;
@@ -24,7 +21,7 @@ public class PeopleActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private Toolbar toolbar;
-    private PeoplesList peoplesList;
+    private Peoples peoples;
     private PeopleActivityAdapter adapter;
     private ProgressBar progressBar;
 
@@ -38,18 +35,18 @@ public class PeopleActivity extends AppCompatActivity {
         initializeToolbar();
 
         if(savedInstanceState == null) {
-            NetworkService.getInstance().getSwapApi().getPeoplesList().enqueue(new Callback<PeoplesList>() {
+            NetworkService.getInstance().getSwapApi().getPeoplesList().enqueue(new Callback<Peoples>() {
                 @Override
-                public void onResponse(Call<PeoplesList> call, Response<PeoplesList> response) {
+                public void onResponse(Call<Peoples> call, Response<Peoples> response) {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
-                    peoplesList = response.body();
-                    adapter = new PeopleActivityAdapter(peoplesList);
+                    peoples = response.body();
+                    adapter = new PeopleActivityAdapter(peoples);
                     recyclerView.setAdapter(adapter);
 
                 }
 
                 @Override
-                public void onFailure(Call<PeoplesList> call, Throwable t){t.printStackTrace();}
+                public void onFailure(Call<Peoples> call, Throwable t){t.printStackTrace();}
             });
         }
     }
@@ -84,15 +81,15 @@ public class PeopleActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putSerializable("PeopleList", peoplesList);
+        outState.putSerializable("PeopleList", peoples);
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        peoplesList = (PeoplesList) savedInstanceState.getSerializable("PeopleList");
-        adapter = new PeopleActivityAdapter(peoplesList);
+        peoples = (Peoples) savedInstanceState.getSerializable("PeopleList");
+        adapter = new PeopleActivityAdapter(peoples);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);
     }

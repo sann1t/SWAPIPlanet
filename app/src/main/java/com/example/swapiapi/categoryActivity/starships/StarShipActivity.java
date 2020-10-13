@@ -10,7 +10,7 @@ import android.widget.ProgressBar;
 
 import com.example.swapiapi.R;
 import com.example.swapiapi.adapters.recyclerview.starship.StarShipActivityAdapter;
-import com.example.swapiapi.models.starships.StarShipsList;
+import com.example.swapiapi.models.starships.StarShips;
 import com.example.swapiapi.network.NetworkService;
 
 import retrofit2.Call;
@@ -21,7 +21,7 @@ public class StarShipActivity extends AppCompatActivity {
 
 
     private RecyclerView recyclerView;
-    private StarShipsList starShipsList;
+    private StarShips starShips;
     private Toolbar toolbar;
     private StarShipActivityAdapter adapter;
     private ProgressBar progressBar;
@@ -36,17 +36,17 @@ public class StarShipActivity extends AppCompatActivity {
         initializeToolbar();
 
         if(savedInstanceState == null) {
-            NetworkService.getInstance().getSwapApi().getStarShipsList().enqueue(new Callback<StarShipsList>() {
+            NetworkService.getInstance().getSwapApi().getStarShipsList().enqueue(new Callback<StarShips>() {
                 @Override
-                public void onResponse(Call<StarShipsList> call, Response<StarShipsList> response) {
+                public void onResponse(Call<StarShips> call, Response<StarShips> response) {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
-                    starShipsList = response.body();
-                    adapter = new StarShipActivityAdapter(starShipsList);
+                    starShips = response.body();
+                    adapter = new StarShipActivityAdapter(starShips);
                     recyclerView.setAdapter(adapter);
                 }
 
                 @Override
-                public void onFailure(Call<StarShipsList> call, Throwable t){t.printStackTrace();}
+                public void onFailure(Call<StarShips> call, Throwable t){t.printStackTrace();}
             });
         }
     }
@@ -80,15 +80,15 @@ public class StarShipActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putSerializable("StarShipsList", starShipsList);
+        outState.putSerializable("StarShipsList", starShips);
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        starShipsList = (StarShipsList) savedInstanceState.getSerializable("StarShipsList");
-        adapter = new StarShipActivityAdapter(starShipsList);
+        starShips = (StarShips) savedInstanceState.getSerializable("StarShipsList");
+        adapter = new StarShipActivityAdapter(starShips);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);
     }

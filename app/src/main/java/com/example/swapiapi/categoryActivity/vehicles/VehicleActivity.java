@@ -10,7 +10,7 @@ import android.widget.ProgressBar;
 
 import com.example.swapiapi.R;
 import com.example.swapiapi.adapters.recyclerview.vehicle.VehicleActivityAdapter;
-import com.example.swapiapi.models.vehicles.VehiclesList;
+import com.example.swapiapi.models.vehicles.Vehicles;
 import com.example.swapiapi.network.NetworkService;
 
 import retrofit2.Call;
@@ -20,7 +20,7 @@ import retrofit2.Response;
 public class VehicleActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private VehiclesList vehiclesList;
+    private Vehicles vehicles;
     private Toolbar toolbar;
     private VehicleActivityAdapter adapter;
     private ProgressBar progressBar;
@@ -35,17 +35,17 @@ public class VehicleActivity extends AppCompatActivity {
         initializeToolbar();
 
         if(savedInstanceState == null) {
-            NetworkService.getInstance().getSwapApi().getVehiclesList().enqueue(new Callback<VehiclesList>() {
+            NetworkService.getInstance().getSwapApi().getVehiclesList().enqueue(new Callback<Vehicles>() {
                 @Override
-                public void onResponse(Call<VehiclesList> call, Response<VehiclesList> response) {
+                public void onResponse(Call<Vehicles> call, Response<Vehicles> response) {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
-                    vehiclesList = response.body();
-                    adapter = new VehicleActivityAdapter(vehiclesList);
+                    vehicles = response.body();
+                    adapter = new VehicleActivityAdapter(vehicles);
                     recyclerView.setAdapter(adapter);
                 }
 
                 @Override
-                public void onFailure(Call<VehiclesList> call, Throwable t){t.printStackTrace();}
+                public void onFailure(Call<Vehicles> call, Throwable t){t.printStackTrace();}
             });
         }
     }
@@ -78,15 +78,15 @@ public class VehicleActivity extends AppCompatActivity {
     }
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putSerializable("VehiclesList", vehiclesList);
+        outState.putSerializable("VehiclesList", vehicles);
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        vehiclesList = (VehiclesList) savedInstanceState.getSerializable("VehiclesList");
-        adapter = new VehicleActivityAdapter(vehiclesList);
+        vehicles = (Vehicles) savedInstanceState.getSerializable("VehiclesList");
+        adapter = new VehicleActivityAdapter(vehicles);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);
     }

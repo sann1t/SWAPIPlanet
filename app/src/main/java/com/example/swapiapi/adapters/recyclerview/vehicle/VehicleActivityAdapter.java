@@ -1,18 +1,14 @@
 package com.example.swapiapi.adapters.recyclerview.vehicle;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.categoryActivity.vehicles.VehicleActivityInfo;
 import com.example.swapiapi.models.vehicles.Vehicle;
-import com.example.swapiapi.models.vehicles.VehiclesList;
+import com.example.swapiapi.models.vehicles.Vehicles;
 
 import java.util.List;
 
@@ -20,8 +16,8 @@ public class VehicleActivityAdapter extends RecyclerView.Adapter<VehicleActivity
 
     private List<Vehicle> vehicleList;
 
-    public VehicleActivityAdapter(VehiclesList vehiclesList) {
-        this.vehicleList = vehiclesList.getResults();
+    public VehicleActivityAdapter(Vehicles vehicles) {
+        this.vehicleList = vehicles.getResults();
     }
 
     @NonNull

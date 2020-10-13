@@ -1,4 +1,4 @@
-package com.example.swapiapi.models.vehicles;
+package com.example.swapiapi.models.planets;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -6,17 +6,17 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.List;
 
-public class VehiclesList implements Serializable {
+public class Planets implements Serializable {
 
     @SerializedName("results")
     @Expose
-    private List<Vehicle> results;
+    private List<Planet> results;
 
-    public List<Vehicle> getResults() {
+    public List<Planet> getResults() {
         return results;
     }
 
-    public void setResults(List<Vehicle> results) {
+    public void setResults(List<Planet> results) {
         this.results = results;
     }
 }

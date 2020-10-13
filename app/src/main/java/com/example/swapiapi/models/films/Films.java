@@ -3,7 +3,7 @@ package com.example.swapiapi.models.films;
 import java.io.Serializable;
 import java.util.List;
 
-public class FilmsList implements Serializable {
+public class Films implements Serializable {
 
     private List<Film> results;
 

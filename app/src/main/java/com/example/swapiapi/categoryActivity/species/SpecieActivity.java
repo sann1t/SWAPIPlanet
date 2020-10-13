@@ -10,7 +10,7 @@ import android.widget.ProgressBar;
 
 import com.example.swapiapi.R;
 import com.example.swapiapi.adapters.recyclerview.specie.SpecieActivityAdapter;
-import com.example.swapiapi.models.species.SpeciesList;
+import com.example.swapiapi.models.species.Species;
 import com.example.swapiapi.network.NetworkService;
 
 import retrofit2.Call;
@@ -20,7 +20,7 @@ import retrofit2.Response;
 public class SpecieActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private SpeciesList speciesList;
+    private Species speciesList;
     private Toolbar toolbar;
     private SpecieActivityAdapter adapter;
     private ProgressBar progressBar;
@@ -35,9 +35,9 @@ public class SpecieActivity extends AppCompatActivity {
         initializeToolbar();
 
         if(savedInstanceState == null) {
-            NetworkService.getInstance().getSwapApi().getSpeciesList().enqueue(new Callback<SpeciesList>() {
+            NetworkService.getInstance().getSwapApi().getSpeciesList().enqueue(new Callback<Species>() {
                 @Override
-                public void onResponse(Call<SpeciesList> call, Response<SpeciesList> response) {
+                public void onResponse(Call<Species> call, Response<Species> response) {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
                     speciesList = response.body();
                     adapter = new SpecieActivityAdapter(speciesList);
@@ -45,7 +45,7 @@ public class SpecieActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(Call<SpeciesList> call, Throwable t){t.printStackTrace();}
+                public void onFailure(Call<Species> call, Throwable t){t.printStackTrace();}
             });
         }
     }
@@ -86,7 +86,7 @@ public class SpecieActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        speciesList = (SpeciesList) savedInstanceState.getSerializable("SpeciesList");
+        speciesList = (Species) savedInstanceState.getSerializable("SpeciesList");
         adapter = new SpecieActivityAdapter(speciesList);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);
