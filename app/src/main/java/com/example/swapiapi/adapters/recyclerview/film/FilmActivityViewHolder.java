@@ -1,33 +1,36 @@
-package com.example.swapiapi.adapters.recyclerview.vehicle;
-
+package com.example.swapiapi.adapters.recyclerview.film;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.categoryActivity.vehicles.VehicleActivityInfo;
+import com.example.swapiapi.categoryActivity.films.FilmActivityInfo;
 import com.example.swapiapi.models.RandomColor;
 import com.example.swapiapi.models.RandomColorInterface;
-import com.example.swapiapi.models.vehicles.Vehicle;
+import com.example.swapiapi.models.films.Film;
 
-public class VehicleActivityViewHolder extends RecyclerView.ViewHolder {
+public class FilmActivityViewHolder extends RecyclerView.ViewHolder {
 
+    private Film film;
     private TextView name;
-    private Vehicle vehicle;
     private TextView imageName;
     private RandomColorInterface randomColorInterface;
     private GradientDrawable gradientDrawable;
 
-    public VehicleActivityViewHolder(@NonNull View itemView) {
+    public FilmActivityViewHolder(@NonNull View itemView) {
         super(itemView);
+
         name = itemView.findViewById(R.id.name);
         imageName = itemView.findViewById(R.id.image_text);
         randomColorInterface = new RandomColor();
         gradientDrawable = (GradientDrawable) itemView.getResources().getDrawable(R.drawable.image_style);
+
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,15 +40,15 @@ public class VehicleActivityViewHolder extends RecyclerView.ViewHolder {
     }
 
     private void startNewActivity() {
-        Intent intent = new Intent(itemView.getContext(), VehicleActivityInfo.class);
-        intent.putExtra("Vehicle", vehicle);
+        Intent intent = new Intent(itemView.getContext(), FilmActivityInfo.class);
+        intent.putExtra("Film", film);
         itemView.getContext().startActivity(intent);
     }
 
-    public void bind(Vehicle vehicle) {
-        this.vehicle = vehicle;
-        imageName.setText(vehicle.getName().substring(0,1));
+    protected void bind(Film film) {
+        this.film = film;
+        imageName.setText(film.getTitle().substring(0,1));
         gradientDrawable.setColor(randomColorInterface.getRandomColor());
-        name.setText(vehicle.getName());
+        name.setText(film.getTitle());
     }
 }

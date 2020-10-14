@@ -1,19 +1,14 @@
 package com.example.swapiapi.adapters.recyclerview.planet;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.categoryActivity.planets.PlanetActivity;
-import com.example.swapiapi.categoryActivity.planets.PlanetActivityInfo;
 import com.example.swapiapi.models.planets.Planet;
-import com.example.swapiapi.models.planets.PlanetsList;
+import com.example.swapiapi.models.planets.Planets;
 
 import java.util.List;
 
@@ -21,7 +16,7 @@ public class PlanetActivityAdapter extends RecyclerView.Adapter<PlanetActivityVi
 
     private List<Planet> planetList;
 
-    public PlanetActivityAdapter(PlanetsList planetList) {
+    public PlanetActivityAdapter(Planets planetList) {
         this.planetList = planetList.getResults();
     }
 

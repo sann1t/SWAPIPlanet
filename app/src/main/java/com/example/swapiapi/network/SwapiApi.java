@@ -1,10 +1,11 @@
 package com.example.swapiapi.network;
 
-import com.example.swapiapi.models.peoples.PeoplesList;
-import com.example.swapiapi.models.planets.PlanetsList;
-import com.example.swapiapi.models.species.SpeciesList;
-import com.example.swapiapi.models.starships.StarShipsList;
-import com.example.swapiapi.models.vehicles.VehiclesList;
+import com.example.swapiapi.models.films.Films;
+import com.example.swapiapi.models.peoples.Peoples;
+import com.example.swapiapi.models.planets.Planets;
+import com.example.swapiapi.models.species.Species;
+import com.example.swapiapi.models.starships.StarShips;
+import com.example.swapiapi.models.vehicles.Vehicles;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -12,19 +13,21 @@ import retrofit2.http.GET;
 public interface SwapiApi {
 
     @GET("planets/")
-    Call<PlanetsList> getPlanetsList();
+    Call<Planets> getPlanetsList();
 
     @GET("people/")
-    Call<PeoplesList> getPeoplesList();
-
+    Call<Peoples> getPeoplesList();
 
     @GET("vehicles/")
-    Call<VehiclesList> getVehiclesList();
+    Call<Vehicles> getVehiclesList();
 
     @GET("starships/")
-    Call<StarShipsList> getStarShipsList();
+    Call<StarShips> getStarShipsList();
 
-      @GET("species/")
-    Call<SpeciesList> getSpeciesList();
+    @GET("species/")
+    Call<Species> getSpeciesList();
+
+    @GET("films/")
+    Call<Films> getFilmsList();
 
 }

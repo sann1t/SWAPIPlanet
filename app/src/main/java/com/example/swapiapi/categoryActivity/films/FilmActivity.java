@@ -1,7 +1,8 @@
-package com.example.swapiapi.categoryActivity.vehicles;
+package com.example.swapiapi.categoryActivity.films;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -9,24 +10,24 @@ import android.view.MenuItem;
 import android.widget.ProgressBar;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.adapters.recyclerview.vehicle.VehicleActivityAdapter;
-import com.example.swapiapi.models.vehicles.Vehicles;
+import com.example.swapiapi.adapters.recyclerview.film.FilmActivityAdapter;
+import com.example.swapiapi.models.films.Films;
 import com.example.swapiapi.network.NetworkService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class VehicleActivity extends AppCompatActivity {
+public class FilmActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private Vehicles vehicles;
-    private Toolbar toolbar;
-    private VehicleActivityAdapter adapter;
     private ProgressBar progressBar;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private Toolbar toolbar;
+    private Films films;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
@@ -34,18 +35,21 @@ public class VehicleActivity extends AppCompatActivity {
         initializeRecyclerView();
         initializeToolbar();
 
-        if(savedInstanceState == null) {
-            NetworkService.getInstance().getSwapApi().getVehiclesList().enqueue(new Callback<Vehicles>() {
+        if (savedInstanceState == null) {
+            NetworkService.getInstance().getSwapApi().getFilmsList().enqueue(new Callback<Films>() {
                 @Override
-                public void onResponse(Call<Vehicles> call, Response<Vehicles> response) {
+                public void onResponse(Call<Films> call, Response<Films> response) {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
-                    vehicles = response.body();
-                    adapter = new VehicleActivityAdapter(vehicles);
+                    films = response.body();
+                    adapter = new FilmActivityAdapter(response.body());
                     recyclerView.setAdapter(adapter);
+
                 }
 
                 @Override
-                public void onFailure(Call<Vehicles> call, Throwable t){t.printStackTrace();}
+                public void onFailure(Call<Films> call, Throwable t) {
+                    t.printStackTrace();
+                }
             });
         }
     }
@@ -60,10 +64,11 @@ public class VehicleActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_bar);
         progressBar.setVisibility(ProgressBar.VISIBLE);
     }
+
     private void initializeToolbar() {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Vehicle");
+        getSupportActionBar().setTitle("Films");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -76,18 +81,21 @@ public class VehicleActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putSerializable("VehiclesList", vehicles);
+        outState.putSerializable("FilmsList", films);
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        vehicles = (Vehicles) savedInstanceState.getSerializable("VehiclesList");
-        adapter = new VehicleActivityAdapter(vehicles);
+        films = (Films) savedInstanceState.getSerializable("FilmsList");
+        adapter = new FilmActivityAdapter(films);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(ProgressBar.INVISIBLE);
     }
+
+
 }
