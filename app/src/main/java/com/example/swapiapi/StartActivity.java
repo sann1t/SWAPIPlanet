@@ -1,6 +1,5 @@
 package com.example.swapiapi;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,14 +8,8 @@ import android.widget.ImageView;
 import android.support.v7.widget.Toolbar;
 
 import com.example.swapiapi.adapters.recyclerview.StartActivityAdapter;
-import com.example.swapiapi.categoryActivity.films.FilmActivity;
-import com.example.swapiapi.categoryActivity.peoples.PeopleActivity;
-import com.example.swapiapi.categoryActivity.planets.PlanetActivity;
-import com.example.swapiapi.categoryActivity.species.SpecieActivity;
-import com.example.swapiapi.categoryActivity.starships.StarShipActivity;
-import com.example.swapiapi.categoryActivity.vehicles.VehicleActivity;
 
-public class StartActivity extends AppCompatActivity implements CallBackStartNewActivity {
+public class StartActivity extends AppCompatActivity{
 
     private RecyclerView recyclerView;
     private StartActivityAdapter startActivityAdapter;
@@ -36,35 +29,8 @@ public class StartActivity extends AppCompatActivity implements CallBackStartNew
         recyclerView = findViewById(R.id.start_activity_recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        startActivityAdapter = new StartActivityAdapter(this, this);
+        startActivityAdapter = new StartActivityAdapter(this);
         recyclerView.setAdapter(startActivityAdapter);
-    }
-
-    @Override
-    public void startNewActivity(String nameCategory) {
-        Intent intent;
-        switch(nameCategory) {
-            case "vehicles" :
-                intent = new Intent(this, VehicleActivity.class);
-                break;
-            case "peoples" :
-                intent = new Intent(this, PeopleActivity.class);
-                break;
-            case "starShips" :
-                intent = new Intent(this, StarShipActivity.class);
-                break;
-            case "planets" :
-                intent = new Intent(this, PlanetActivity.class);
-                break;
-            case "species" :
-                intent = new Intent(this, SpecieActivity.class);
-                break;
-            case "films" :
-                intent = new Intent(this, FilmActivity.class);
-                break;
-            default: intent = null;
-        }
-        this.startActivity(intent);
     }
 
     private void initializeToolbar() {

@@ -14,4 +14,5 @@ public class Films implements Serializable {
     public void setResult(List<Film> result) {
         this.results = result;
     }
+
 }

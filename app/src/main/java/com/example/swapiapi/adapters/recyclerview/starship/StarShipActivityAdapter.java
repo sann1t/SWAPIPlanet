@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.example.swapiapi.R;
 import com.example.swapiapi.models.starships.StarShip;
 import com.example.swapiapi.models.starships.StarShips;
+import com.example.swapiapi.views.starships.info.StartNewActivityCallBack;
 
 
 import java.util.List;
@@ -16,8 +17,10 @@ import java.util.List;
 public class StarShipActivityAdapter extends RecyclerView.Adapter<StarShipActivityViewHolder> {
 
     private List<StarShip> starShipList;
+    private StartNewActivityCallBack callBack;
 
-    public StarShipActivityAdapter(StarShips starShips) {
+    public StarShipActivityAdapter(StarShips starShips, StartNewActivityCallBack callBack) {
+        this.callBack = callBack;
         this.starShipList = starShips.getResults();
     }
 
@@ -32,7 +35,7 @@ public class StarShipActivityAdapter extends RecyclerView.Adapter<StarShipActivi
 
     @Override
     public void onBindViewHolder(@NonNull StarShipActivityViewHolder starShipActivityViewHolder, int i) {
-        starShipActivityViewHolder.bind(starShipList.get(i));
+        starShipActivityViewHolder.bind(starShipList.get(i), callBack);
     }
 
     @Override

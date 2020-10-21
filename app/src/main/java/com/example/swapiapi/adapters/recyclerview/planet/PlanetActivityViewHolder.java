@@ -1,6 +1,5 @@
 package com.example.swapiapi.adapters.recyclerview.planet;
 
-import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,10 +7,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.categoryActivity.planets.PlanetActivityInfo;
 import com.example.swapiapi.models.RandomColor;
 import com.example.swapiapi.models.RandomColorInterface;
 import com.example.swapiapi.models.planets.Planet;
+import com.example.swapiapi.views.planets.info.StartNewActivityCallBack;
 
 public class PlanetActivityViewHolder extends RecyclerView.ViewHolder {
 
@@ -20,6 +19,7 @@ public class PlanetActivityViewHolder extends RecyclerView.ViewHolder {
     private TextView imageName;
     private RandomColorInterface randomColorInterface;
     private GradientDrawable gradientDrawable;
+    private StartNewActivityCallBack callBack;
 
     public PlanetActivityViewHolder(@NonNull final View itemView) {
         super(itemView);
@@ -30,18 +30,14 @@ public class PlanetActivityViewHolder extends RecyclerView.ViewHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startNewActivity();
+                callBack.onClick(planet);
             }
         });
     }
 
-    private void startNewActivity() {
-        Intent intent = new Intent(itemView.getContext(), PlanetActivityInfo.class);
-        intent.putExtra("Planet", planet);
-        itemView.getContext().startActivity(intent);
-    }
 
-    protected void bind(Planet planet) {
+    protected void bind(Planet planet, StartNewActivityCallBack callBack) {
+        this.callBack = callBack;
         this.planet = planet;
         imageName.setText(planet.getName().substring(0,1));
         gradientDrawable.setColor(randomColorInterface.getRandomColor());

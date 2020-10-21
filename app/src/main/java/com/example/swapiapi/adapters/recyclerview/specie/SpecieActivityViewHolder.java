@@ -1,7 +1,5 @@
 package com.example.swapiapi.adapters.recyclerview.specie;
 
-
-import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -9,13 +7,14 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.categoryActivity.species.SpecieActivityInfo;
 import com.example.swapiapi.models.RandomColor;
 import com.example.swapiapi.models.RandomColorInterface;
 import com.example.swapiapi.models.species.Specie;
+import com.example.swapiapi.views.species.info.StartNewActivityCallBack;
 
 public class SpecieActivityViewHolder extends RecyclerView.ViewHolder {
 
+    private StartNewActivityCallBack callBack;
     private Specie specie;
     private TextView name;
     private TextView imageName;
@@ -32,18 +31,13 @@ public class SpecieActivityViewHolder extends RecyclerView.ViewHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startNewActivity();
+                callBack.onClick(specie);
             }
         });
     }
 
-    private void startNewActivity() {
-        Intent intent = new Intent(itemView.getContext(), SpecieActivityInfo.class);
-        intent.putExtra("Specie", specie);
-        itemView.getContext().startActivity(intent);
-    }
-
-    public void bind(Specie specie){
+    public void bind(Specie specie, StartNewActivityCallBack callBack){
+        this.callBack = callBack;
         this.specie = specie;
         imageName.setText(specie.getName().substring(0,1));
         gradientDrawable.setColor(randomColorInterface.getRandomColor());

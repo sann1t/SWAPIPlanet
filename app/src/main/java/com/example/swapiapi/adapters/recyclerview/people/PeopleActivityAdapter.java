@@ -9,14 +9,17 @@ import android.view.ViewGroup;
 import com.example.swapiapi.R;
 import com.example.swapiapi.models.peoples.People;
 import com.example.swapiapi.models.peoples.Peoples;
+import com.example.swapiapi.views.peoples.info.StartNewActivityCallBack;
 
 import java.util.List;
 
 public class PeopleActivityAdapter extends RecyclerView.Adapter<PeopleActivityViewHolder> {
 
     private List<People> peoplesList;
+    private StartNewActivityCallBack callBack;
 
-    public PeopleActivityAdapter(Peoples peoples) {
+    public PeopleActivityAdapter(Peoples peoples, StartNewActivityCallBack callBack) {
+        this.callBack = callBack;
         this.peoplesList = peoples.getResults();
     }
 
@@ -31,7 +34,7 @@ public class PeopleActivityAdapter extends RecyclerView.Adapter<PeopleActivityVi
 
     @Override
     public void onBindViewHolder(@NonNull PeopleActivityViewHolder peopleActivityViewHolder, int i) {
-        peopleActivityViewHolder.bind(peoplesList.get(i));
+        peopleActivityViewHolder.bind(peoplesList.get(i), callBack);
     }
 
     @Override

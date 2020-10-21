@@ -9,14 +9,17 @@ import android.view.ViewGroup;
 import com.example.swapiapi.R;
 import com.example.swapiapi.models.species.Specie;
 import com.example.swapiapi.models.species.Species;
+import com.example.swapiapi.views.species.info.StartNewActivityCallBack;
 
 import java.util.List;
 
 public class SpecieActivityAdapter extends RecyclerView.Adapter<SpecieActivityViewHolder> {
 
     private List<Specie> specieList;
+    private StartNewActivityCallBack callBack;
 
-    public SpecieActivityAdapter(Species speciesList) {
+    public SpecieActivityAdapter(Species speciesList, StartNewActivityCallBack callBack) {
+        this.callBack = callBack;
         this.specieList = speciesList.getResults();
     }
 
@@ -31,7 +34,7 @@ public class SpecieActivityAdapter extends RecyclerView.Adapter<SpecieActivityVi
 
     @Override
     public void onBindViewHolder(@NonNull SpecieActivityViewHolder specieActivityViewHolder, int i) {
-        specieActivityViewHolder.bind(specieList.get(i));
+        specieActivityViewHolder.bind(specieList.get(i), callBack);
     }
 
     @Override
