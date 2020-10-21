@@ -64,7 +64,7 @@ public class StartPresenter{
                 Glide.with(context).load("https://images.wikia.com/starwars/images/thumb/6/63/Devaronians.jpg/200px-Devaronians.jpg").into(image);
                 break;
             case "films" :
-                Glide.with(context).load("https://lh3.googleusercontent.com/proxy/1SKxYuSef6449GaPjV0XzluQQWZukGDS7fRdZx1KwGa4JntkWYBP0As0m_mg52Lr-wu5mZy58fq_x7lvqQ9uKRfsPUcEG81WqcU7zN-ae7TlxR4").into(image);
+                Glide.with(context).load("https://image.shutterstock.com/image-vector/movie-film-abstract-modern-poster-600w-1079885462.jpg").into(image);
                 break;
         }
     }
