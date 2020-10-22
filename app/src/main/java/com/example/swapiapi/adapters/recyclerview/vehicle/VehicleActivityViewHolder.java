@@ -1,7 +1,5 @@
 package com.example.swapiapi.adapters.recyclerview.vehicle;
 
-
-import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.swapiapi.R;
-import com.example.swapiapi.categoryActivity.vehicles.VehicleActivityInfo;
+import com.example.swapiapi.views.vehicles.info.StartNewActivityCallBack;
 import com.example.swapiapi.models.RandomColor;
 import com.example.swapiapi.models.RandomColorInterface;
 import com.example.swapiapi.models.vehicles.Vehicle;
@@ -21,6 +19,7 @@ public class VehicleActivityViewHolder extends RecyclerView.ViewHolder {
     private TextView imageName;
     private RandomColorInterface randomColorInterface;
     private GradientDrawable gradientDrawable;
+    private StartNewActivityCallBack callBack;
 
     public VehicleActivityViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -31,18 +30,13 @@ public class VehicleActivityViewHolder extends RecyclerView.ViewHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startNewActivity();
+                callBack.onClick(vehicle);
             }
         });
     }
 
-    private void startNewActivity() {
-        Intent intent = new Intent(itemView.getContext(), VehicleActivityInfo.class);
-        intent.putExtra("Vehicle", vehicle);
-        itemView.getContext().startActivity(intent);
-    }
-
-    public void bind(Vehicle vehicle) {
+    public void bind(Vehicle vehicle, StartNewActivityCallBack callBack) {
+        this.callBack = callBack;
         this.vehicle = vehicle;
         imageName.setText(vehicle.getName().substring(0,1));
         gradientDrawable.setColor(randomColorInterface.getRandomColor());

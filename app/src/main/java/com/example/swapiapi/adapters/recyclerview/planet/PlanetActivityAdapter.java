@@ -9,14 +9,17 @@ import android.view.ViewGroup;
 import com.example.swapiapi.R;
 import com.example.swapiapi.models.planets.Planet;
 import com.example.swapiapi.models.planets.Planets;
+import com.example.swapiapi.views.planets.info.StartNewActivityCallBack;
 
 import java.util.List;
 
 public class PlanetActivityAdapter extends RecyclerView.Adapter<PlanetActivityViewHolder> {
 
     private List<Planet> planetList;
+    private StartNewActivityCallBack callBack;
 
-    public PlanetActivityAdapter(Planets planetList) {
+    public PlanetActivityAdapter(Planets planetList, StartNewActivityCallBack callBack) {
+        this.callBack = callBack;
         this.planetList = planetList.getResults();
     }
 
@@ -31,7 +34,7 @@ public class PlanetActivityAdapter extends RecyclerView.Adapter<PlanetActivityVi
 
     @Override
     public void onBindViewHolder(@NonNull PlanetActivityViewHolder holder, int i) {
-        holder.bind(planetList.get(i));
+        holder.bind(planetList.get(i), callBack);
     }
 
     @Override
